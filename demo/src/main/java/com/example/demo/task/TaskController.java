@@ -29,9 +29,11 @@ public class TaskController {
     @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping(path = "{taskId}")
     public boolean deleteTask(@PathVariable("taskId") Long taskId){
-        taskService.deleteTask(taskId);
+      return   taskService.deleteTask(taskId);
     }
     @CrossOrigin(origins = "http://localhost:3000")
+
+
     @PutMapping(path = "{taskId}")
     public Task updateTask(@PathVariable("taskId") Long taskId, @RequestBody Task modifiedTask){
         return taskService.modifyTask(modifiedTask);

@@ -1,0 +1,46 @@
+version: '3.9'
+services:
+  backend:
+    build:
+      context: ./demo/
+      dockerfile: Dockerfile
+    container_name: backend
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/compose-postgres
+      - SPRING_DATASOURCE_USERNAME=compose-postgres
+      - SPRING_DATASOURCE_PASSWORD=compose-postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    networks:
+      - applicationnetwork
+    ports:
+      - "8081:8081"  
+          
+  db:
+    image: 'postgres:14.1-alpine'
+    container_name: db
+    environment:
+      - POSTGRES_USER=compose-postgres
+      - POSTGRES_PASSWORD=compose-postgres
+    networks:
+      - applicationnetwork
+  
+  frontend:
+    container_name: frontend
+    build:
+      context: ./react-todo/
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on: 
+      - backend
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    networks:
+      - applicationnetwork  
+
+networks:
+  applicationnetwork:
+    driver: bridge
