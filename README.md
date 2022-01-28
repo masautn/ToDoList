@@ -11,6 +11,8 @@ The second phase includes the incorporation of folders where the task can be sto
 
 A third optional phase includes a login screen.
 
+UI can be improved by a lot, but it looks childish and I kind of like it :D 
+
 
 # How to use
 
