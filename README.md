@@ -18,23 +18,22 @@ In order to use this application we will have to do the following steps:
 
 1. Install Docker https://docs.docker.com/desktop/windows/install/
 2. Install WSL 2: On the Desktop Docker Installer is the WSL2 Intaller is included. You can also run 
-wsl --install on PowerShell
-3. Install git https://git-scm.com/downloads
-4. Clone proyect https://github.com/masautn/ToDoList
-5. Go to root directory and execute the following command: docker-compose up
-6. Once all the containers are built go to http://localhost:3000/
-7. Enjoy the useful To-Do-List Application!
+wsl --install on PowerShell (only Windows)
+3. Go to "ToDoList" directory and execute the following command:
+ ```
+ docker-compose up
+ ```
+4. Once all the containers are built go to http://localhost:3000/
+5. Enjoy the useful To-Do-List Application!
 
 # Tools used
 
-All the tecnologies and tools used for this proyect are on the following list:
+All the technologies and tools used for this proyect are on the following list:
 
 ## Backend:
 - Java JDK 17.0.2
 https://www.oracle.com/java/technologies/downloads/#jdk17-windows
 - Sping Boot framework
-IDE:
-- Intellij Idea 2021: https://www.jetbrains.com/es-es/idea/
 
 ## Database:
 - Postgresql 14.1
@@ -44,8 +43,9 @@ https://www.postgresql.org/download/
 - React JS
 - Material UI
 - Javascript
-IDE:
+## IDE:
 - Visual Studio Code
+- Intellij Idea 2021: https://www.jetbrains.com/es-es/idea/
 
 ## Build and Execution
 - Docker Desktop
