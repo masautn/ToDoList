@@ -9,10 +9,10 @@ import java.util.List;
 
 public class TaskController {
 
-    private final TaskService taskService; //Referencia a StudentService capa de negocios
+    private final TaskService taskService; 
 
     @Autowired
-    public TaskController(TaskService taskService){ ////constructor
+    public TaskController(TaskService taskService){ 
         this.taskService = taskService;
     }
 
@@ -26,6 +26,7 @@ public class TaskController {
     public Task registerNewTask(@RequestBody Task task) {
        return taskService.addNewTask(task);
     }
+    
     @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping(path = "{taskId}")
     public boolean deleteTask(@PathVariable("taskId") Long taskId){
